@@ -351,3 +351,23 @@ void FilePath::Test() {
 	}
 }
 
+/*
+ Example use:
+
+// e.g. "c:\\dir\\dir2" or unix path
+std::string g_AppStartDirectoy;
+
+main(){
+
+#ifdef WIN32
+  char path[MAX_PATH];
+  GetCurrentDirectory(MAX_PATH, path);
+	g_AppStartDirectoy = path;
+#endif
+
+  std::string GetAbsPath(const char* relative) {
+  	return g_AppStartDirectoy + "/" + relative;
+  }
+}
+
+*/
